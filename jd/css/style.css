@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+
+ol,body,h1,h2,h3,h4,h5,h6,p,ul,li,input,dl,dt,dd{margin:0;padding:0;}
+ol,ul{list-style:none;}
+a{text-decoration:none;color:#666;}
+img,input{border:none;}
+i{font-style:normal;font-family:consolas;}
+h2{color:#333;}
+body{font-family:arial,"Microsoft YaHei","宋体"; color:#666;}
+.clearfix{zoom:1;}
+.clearfix:after{content:'200B';display:block;clear:both;font-size:0;height:0;}
+
+/*header开始*/
+.header {border-bottom:2px solid #b1191a;}
+.header .top { height:30px;background:#f1f1f1;}
+.header .top .inner{ width:1210px;margin:0 auto;height:30px;}
+.header .inner .dizhi{ float:left;font-size:12px;color:#666;padding:0 10px;line-height:30px;font-family:"宋体";position: relative}
+
+.header .inner .dizhi #wendu{font-size: 12px;height: 30px;line-height: 30px;position: absolute;left: 190px;top: 0}
+.header .inner .dizhi #tubiao{height: 30px;line-height: 30px;position: absolute;left:230px;top: 0}
+.header .inner .dizhi:hover i{transform:rotate(180deg);}
+.header .inner ul{ float:right;}
+.header .inner li{ line-height:30px;float:left;}
+.header .inner .line{width:1px;height:12px;background:#ddd;margin-top:9px;}
+.header .inner li a{font-size:12px;font-family:"宋体";color:#666;padding:0 10px;line-height:30px;display:inline-block;vertical-align:top;}
+.header .inner li a:hover{color:#c81623;}
+.header .inner .active:hover{color:#666;}
+.header .inner .active_bg:hover{background:#fff;}
+.header .inner .h_one{padding:0;margin-right:6px;}
+.header .inner .h_two{padding:0;margin-right:12px;color:#c81623;}
+.header .inner li a span{width:15px;height:20px;background:url(../images/jd2015img.png) no-repeat;display:inline-block;margin:5px 3px 0 0;float:left;}
+.header .inner li a:hover span{background:url(../images/jd2015img.png) no-repeat 0 -25px;}
+.header .inner i{font-family:consolas;font-size:16px;width:12px;height:5px;margin-left:10px;overflow:hidden;color:#6A6A6A;line-height:3px;display:inline-block;transition:all 0.2s;}
+.header .inner li a:hover i{transform:rotate(180deg);}
+.header .mid{width:1210px;margin:0 auto;}
+.header .mid .logo{float:left;padding:20px 0;}
+.header .mid .logo img{width:270px;height:60px;}
+.header .mid .search{float:left;padding:25px 0 0 92px;}
+.header .mid .search .text{float:left;width:446px;height:32px;border:2px solid #b61d1d;padding:0 4px;color:#666;font-size:14px;font-family:"微软雅黑";}
+.header .mid .search .sbumit{ float:left;width:80px;height:36px;color:#666;font-size:16px;font-family:"微软雅黑";background:#b61d1d;color:#fff;}
+.header .mid .tags{width:538px;height:28px;overflow:hidden;}
+.header .mid .tags a{ display:block;float:left;color:#666;font:12px/28px "宋体";margin-right:11px;}
+.header .mid .tags a:hover{color:#c81623;}
+.header .mid .tags .active{color:#c81623;}
+
+.header .mid .my_cart{ float:right;width:139px;height:34px;border:1px solid #dfdfdf;margin:25px 65px 0 0;background:#f9f9f9 url(../images/jd2015img.png) no-repeat 18px -48px;line-height:34px;position:relative;}
+.header .my_cart a{ color:#666;font-size:12px;margin-left:43px;font-family:"宋体";display:inline-block;vertical-align:top;}
+.header .my_cart a:hover{color:#c81623;}
+.header .my_cart i{float:right;padding-right:11px;font-family:consolas;font-size:12px;color:#a2a2a2;}
+.header .my_cart .number{padding:0 5px;height:14px;background-color:#c81623;border-radius:6px 6px 6px 0;font-size:12px;text-align:center;line-height:14px;position:absolute;top:-4px;left:104px;color:#fff;}
+.header .bot {width:1210px;margin:0 auto;zoom:1;}
+.header .bot:after{content:'';display:block;clear:both;}
+.header .bot .titel{width:200px;height:44px;float:left;background:#b1191a;font-size:15px;line-height:44px;padding-left:10px;color:#fff;}
+.header .bot ul{float:left;}
+.header .bot li{float:left;padding:0 20px;line-height:44px;height:44px;font-size:16px;}
+.header .bot li a{color:#333;display:block;}
+.header .bot li a:hover{color:#c81623;}
+/*slogan开始*/
+.slogan{margin-top:20px;background:#f5f5f5;height:94px;}
+.slogan .slogan_ul{ width:1200px;margin:0 auto;padding:0 5px;}
+.slogan .slogan_ul li{ width:300px;float:left;height:54px;margin-top:20px;background:url(../images/nva_bg.png) no-repeat 0 -130px;}
+.slogan .slogan_ul .fore2{ background-position:0 -194px;}
+.slogan .slogan_ul .fore3{ background-position:0 -258px;}
+.slogan .slogan_ul .fore4{ background-position:0 -322px;}
+/*footer开始*/
+.footer{ width:1200px;height:202px;margin:0 auto;}
+.footer dl{ float:left;width:197px;padding-top:15px;}
+.footer dl dt{ height:38px;line-height:38px;font-size:16px;color:#666;}
+.footer dl dd{ height:20px;line-height:20px;font-size:12px;font-family:"宋体";}
+.footer dl dd a:hover{ color:#c81623;}
+.footer .last_of_two{ width:160px;}
+.footer .last_of_one{ width:190px;padding:15 40px 0 20px;background:url(../images/20130330B_1.png) no-repeat 0 -131px;height:169px;}
+.footer .last_of_one dd>a{ float:right;}
+/*foot_last开始*/
+.foot_last{ width:1200px;margin:0 auto;text-align:center;border-top:1px solid #e5e5e5;}
+.foot_last .foot_ul{ padding-top:21px;display:inline-block;}
+.foot_last .foot_ul li{ float:left;line-height:16px;height:16px;font-size:12px;}
+.foot_last .foot_ul li a{ margin:0 11px;}
+.foot_last .foot_ul li a:hover{ color:#c81623;}
+.foot_last .copyright{ display:inline-block;font-size:12px;line-height:20px;padding-top:10px;}
+.foot_last .copyright .jing{ padding-left:22px;}
+.foot_last .copyright a:hover{ color:#c81623;}
+.foot_last .f_icon{ margin:9px 0 30px;font-size:0;}
+.foot_last .f_icon a{ margin:0 6px 0 7px;}
+
+/*jd_elevator导航开始*/
+.jd_elevator{ position:fixed;left:50%;top:50%;width:20px;height:347px;margin:-166px 0 0 -650px;text-align:center;}
+.jd_elevator .jd_e li{ width:20px;height:31px;border-top: 1px dotted #c2c2c2;line-height:30px;font-size:14px;margin:-1px 0 0 5px;position:relative;}
+.jd_elevator .jd_e .ac span{display: none}
+.jd_elevator .jd_e .ac a{display: inline;background:#c81623;color:#fff;transition:all 0.5s;display:block;}
+.jd_elevator .jd_e .first{ border-top: none;}
+.jd_elevator .jd_e li span{ width:30px;display:block;margin-left:-5px;font-size:14px;}
+.jd_elevator .jd_e li:hover span{ display:none;}
+.jd_elevator .jd_e li a{color:#c81623;position:absolute;left:0;top:0;font-size:12px;width:30px;height:30px;margin-left:-5px;display:none;}
+.jd_elevator .jd_e li:hover a{ background:#c81623;color:#fff;transition:all 0.5s;display:block;}
+/*jd_boundary导航开始*/
+.jd_boundary{ position:fixed;right:0;top:0;width:6px;height:100%;background:#7a6e6e;}
+/*jd_tool导航开始*/
+.jd_tool{ position:fixed;right:0;top:393px; }
+.jd_tool .jd_t li { position:relative;}
+.jd_tool .jd_t li a{ width:35px; height:35px;background:#7a6e6e url(../images/toolbars.png) no-repeat -87px -175px;border-radius:3px 0 0 3px;margin-bottom:1px;display:block;position:relative;z-index:2;}
+.jd_tool .jd_t li a:hover{ background-color:#c81623;}
+.jd_tool .jd_t .t_fore2{ background-position:-49px 0px;}
+.jd_tool .jd_t .t_fore3{ background-position:-49px -50px;}
+.jd_tool .jd_t .t_fore4{ background-position:-49px -100px;}
+.jd_tool .jd_t .t_fore5{ background-position:-189px -150px;}
+.jd_tool .jd_t .t_fore6{ background-position:-49px -150px;}
+.jd_stick .jd_s li a{ display:block;}
+.jd_tool .jd_t li span{ background:#7a6e6e;font-size:12px;color:#fff;height:35px;position:absolute;left:0;top:0;width:60px;line-height:35px;border-radius:3px 0 0 3px;transition:all 0.2s;padding-left:12px;z-index:1;}
+.jd_tool .jd_t li:hover span{ left:-63px;}
+.jd_tool .jd_t li:hover span{ background-color:#c81623;transition:all 0;}
+
+/*jd_stick导航开始*/
+.jd_stick{ position:fixed;bottom:0;right:0;}
+.jd_stick .jd_s li { position:relative;}
+.jd_stick .jd_s li a{ width:35px; height:35px;background:#7a6e6e url(../images/toolbars.png) no-repeat -48px -250px;border-radius:3px 0 0 3px;margin-bottom:1px;display:block;position:relative;z-index:2;}
+.jd_stick .jd_s .s_fore2{ background-position:-48px -300px;}
+.jd_stick .jd_s li a:hover{ background-color:#c81623;}
+.jd_stick .jd_s li span{ background:#7a6e6e;font-size:12px;color:#fff;height:35px;position:absolute;left:0;top:0;width:50px;line-height:35px;border-radius:3px 0 0 3px;transition:all 0.2s;padding-left:12px;z-index:1;}
+.jd_stick .jd_s li:hover span{ left:-50px;background-color:#c81623;}
+.jd_stick .jd_s li .jd_s_last{ background:#c81623; color:#fff;font-size:12px;text-align:center;line-height:15px;padding-top:2px;height:32px;}
+

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>详情页</title>
+<link href="css/style1.css" rel="stylesheet" type="text/css" />
+<link href="css/details.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-3.1.0.js"></script><script src="js/products.json"></script>
+<script>
+   //-------图片选项卡---------------
+$(function(){
+    $(".small").find("ul").find("li").on("click",function(){
+        var k=$(this).index()
+        $(".fig").find(".fig_img").eq(k).css("display","block");
+        $(".fig").find(".fig_img").eq(k).siblings().css("display","none");
+    })
+});
+
+
+
+//-------------返回顶部-------------
+$(function(){
+
+    /*if($("html,body").scrollTop>=400){
+     $(".jd_elevator").css("display","block");
+     }else{
+     $(".jd_elevator").css("display","none");
+     }*/
+    // 为站内链接绑定click事件处理函数
+    // 排除外部链接和空链接
+    $("a[href*='#']:not([href='#'])").on("click",function(){
+        // 获得hash值
+        var id = this.hash;
+//                    console.log("id:" + id);
+        // 距离浏览器顶部的距离
+//                    console.log($(id).offset().top);
+        $("html,body").animate({
+            // 以hash值为id选择器
+            scrollTop:$(id).offset().top
+        },600);
+    });
+});
+
+
+
+//--------------添加商品------------------
+$(function(){
+        $.getJSON("js/products.json",function(products){
+
+            for(var i= 0;i<products.length;i++){
+                //取出其中个的每一个元素（每一个商品）
+                var produc=products[i];
+
+                var $div=$("<div/>");
+                $("<td/>").append('<img src="images/'+produc.imgsrc+'">').appendTo($div);
+                $("<h2/>").append(produc.title).appendTo($div);
+                $("<p/>").append(produc.desc).appendTo($div);
+                $("<div/>").addClass("price").append("￥"+produc.price).appendTo($div);
+
+                $(".bottom").append($div);
+                $(".bottom").find("div").addClass("pic")
+
+            }
+        })
+
+})
+ 
+</script>
+</head>
+<body>
+<div class="header" id="top">
+    <div class="top">
+        <div class="inner">
+            <div class="diqu">送至：北京<i>◇</i>
+            </div>
+            <ul>
+                <li><a href="#">你好，请登录</a></li>
+                <li class="li3"><a href="#">免费注册</a></li>
+                <li class="line"></li>
+                <li><a href="#">我的订单</a></li>
+                <li class="line"></li>
+                <li class="li1" id="my_j"><a href="#">我的京东<i>◇</i></a>
+                <li class="line"></li>
+                <li><a href="#">京东会员</a></li>
+                <li class="line"></li>
+                <li><a href="#">企业采购</a></li>
+                <li class="line"></li>
+                <li class="li1" id="top_pop2"><a href="#"><span></span>手机京东<i>◇</i></a>
+                    <a href="#" class="pop pop2">
+                        <img src="images/header_2.png">
+                    </a>
+                </li>
+                <li class="line"></li>
+                <li class="li1" id="top_pop3"><a href="#">关注京东<i>◇</i></a>
+                    <a href="#" class="pop pop3">
+                        <img src="images/header_3.jpg">
+                    </a>
+                </li>
+                <li class="line"></li>
+                <li class="li1 li2" id="top_pop4"><a href="#">客户服务<i>◇</i></a>
+                </li>
+                <li class="line"></li>
+                <li class="li1 li2" id="top_pop5"><a href="#">网站导航<i>◇</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mid">
+        <div class="inner clear">
+            <div class="logo">
+                <a href="#"><img src="images/logo-201305.png" /></a>
+            </div>
+            <div class="search">
+                <form>
+                    <input type="text" value="雅诗兰黛" class="text" id="search_text"/>
+                    <input type="submit" value="搜索" class="sub" />
+                </form>
+                <div class="tags">
+                    <a href="#" class="a1">相宜本草</a>
+                    <a href="#">薇姿</a>
+                    <a href="#">妮维雅</a>
+                    <a href="#">高夫</a>
+                    <a href="#">丝蓓绮</a>
+                    <a href="#">百雀羚</a>
+                    <a href="#">丝塔芙</a>
+                </div>
+            </div>
+            <div class="buy">
+                <a href="#">我的购物车</a>
+                <i>></i>
+                <div class="number">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="bot">
+        <div class="inner clear">
+            <div class="left" id="all">
+                <a href="#">全部商品分类</a>
+                <i>﹀</i>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">服装城</a></li>
+                    <li><a href="#">美妆馆</a></li>
+                    <li><a href="#">京东超市</a></li>
+                    <li><a href="fresh.html">生鲜</a></li>
+                    <li><a href="#">全球购</a></li>
+                    <li><a href="#">闪购</a></li>
+                    <li><a href="#">团购</a></li>
+                    <li><a href="#">拍卖</a></li>
+                    <li><a href="#">金融</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="main">
+    <div class="inner">
+
+        <div class="title clear">
+            <dl>
+                <dt><a href="javascript:;">个护化妆</a></dt>
+                <dd><span>></span><a href="javascript:;">面部护肤</a></dd>
+                <dd><span>></span><a href="javascript:;">面膜</a></dd>
+                <dd><span>></span><a href="javascript:;">韩后</a></dd>
+                <dd><span>></span><a href="javascript:;">韩后蚕丝面膜</a></dd>
+            </dl>
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="fig">
+                    <div class="fig_img"><img src="images/584a6d78Nc8b21f3e.jpg" /></div>
+                    <div class="fig_img" style="display: none"><img src="images/5854e8c4Nba7d8faf.jpg"/></div>
+                    <span></span>
+                </div>
+                <div class="big">
+                    <img src="images/big_1.jpg"/>
+                </div>
+                <div class="small" >
+                    <a href="javascript:;" class="disabled" id="spec_left"></a>
+                    <a href="javascript:;" class="disabled" id="spec_right"></a>
+                    <ul>
+                        <li><img src="images/584a6d78Nc8b21f3e(1).jpg"/></li>
+                        <li><img src="images/5857b527Nf47c964d.jpg"/></li>
+                    </ul>
+                </div>
+                <div class="num">
+                    <p>商品编号：1591457</p>
+                    <a href="javascript:;"><i></i>关注商品</a>
+                    <a href="javascript:;"><span></span>分享</a>
+                </div>
+            </div>
+            <div class="center">
+                <div id="name">
+                    <h1>【京东超市】韩后（Hanhoo)水漾嫩白达人面膜组合12片(仙人掌+巨藻+山羊奶各4片 蚕丝面膜 补水面膜女)</h1>
+                    <p>【京东自营】入秋备新妆，护肤新主张！全场4折起，更有满199减80！优惠持续进行中！<a href="javascript:;">【更多满减点击进入】</a> </p>
+                </div>
+                <div id="summary">
+                    <img src="images/hdg45fdsf54dfds_03.jpg"/>
+                    <p>支　　持：<a href="javascript:;" style="color: red"><i></i>礼品购</a> </p>
+                    <p>
+                        配　　送：
+                        <select>
+                            <option>河南郑州市新密市</option>
+                        </select>
+                        <b>有货</b>， 支持 <a href="javascript">99元免运费</a>
+                    </p>
+                    <p>服　　务：由 京东 发货，并提供售后服务。23:00前完成下单,预计<b>明天(09月03日)</b>送达</p>
+                </div>
+                <div id="choose">
+                    <dl>
+                        <dt>选择产品：</dt>
+                        <dd><i></i><a href="javascript:;"><img src="images/57481fd1Nefef1325dfec.jpg"/>水漾嫩白22ml*12片</a></dd>
+                        <dd><i></i><a href="javascript:;"><img src="images/571dc4dbN33db4e11.jpg"/>水嫩亮肤22ml*21片</a></dd>
+                        <dd><i></i><a href="javascript:;"><img src="images/57481c2dN4cc27564.jpg"/>水嘟嘟粉嫩22ml*15片</a></dd>
+                        <dd><i></i><a href="javascript:;"><img src="images/57481f5aN8b011156.jpg"/>巨藻盒装22ml*10片</a></dd>
+                        <dd><i></i><a href="javascript:;"><img src="images/5791c595Ne90ffd30.jpg"/>玫瑰山羊奶22ml*8片</a></dd>
+                        <dd><i></i><a href="javascript:;"><img src="images/5791c619N02c20106.jpg"/>树莓粉嫩22ml*5片</a></dd>
+                        <dd><i></i><a href="javascript:;"><img src="images/573ed4a9Naf58bd2d.jpg"/>红石榴红润22ml*5片</a></dd>
+                    </dl>
+                    <div class="increment">
+                        <p>增值保障：</p>
+                        <a href="javascript:;"><img class="icon" src="images/567cb057N77e247ca.png"/><span>京东换新 ￥4.9</span><b></b></a>
+                        <a href="javascript:;"><img class="icon" src="images/56c298b9N129e7ec5.png"/><span>美颜保障 ￥1</span><b></b></a>
+                        <i class="sprite-question"></i>
+                    </div>
+                </div>
+                <div id="bai">
+                    <p>白条分期：</p>
+                    <ul>
+                        <li><i></i><a href="javascript:;">30天免息</a> </li>
+                        <li><i></i><a href="javascript:;">￥26.73×3期</a> </li>
+                        <li><i></i><a href="javascript:;">￥13.56×6期</a> </li>
+                        <li><i></i><a href="javascript:;">￥6.98×12期</a> </li>
+                        <li><i></i><a href="javascript:;">￥3.69×24期</a> </li>
+                    </ul>
+                    <img src="images/56336130N97219d11.png"/>
+                    <i class="sprite-question"></i>
+                </div>
+                <div id="buy">
+                    <div class="wrap-input">
+                        <a class="add" href="javascript:;">+</a>
+                        <a class="reduce" href="javascript:;">-</a>
+                        <input id="num" type="text" value="1">
+                    </div>
+                    <a class="buy_bg" href="javascript:;"><span></span></a>
+                    <a id="tia" href="javascript:;">打白条</a>
+                </div>
+                <p style="padding-top: 20px;">温馨提示：1.　支持7天无理由退货</p>
+                </div>
+            <div class="right">
+                <div class="logo"><img src="images/557e4b12N0f1e9cf6.jpg"/></div>
+                <a href="javascript:;" style="color: #005aa0;padding: 0 10px;">韩后京东自营旗舰店</a><span> 京东自营</span>
+                <ul>
+                    <li><img src="images/sprite-gys-im.gif"/><a href="javascript:;">联系供应商</a></li>
+                    <li><i class="i1"></i><a href="javascript:;">咨询JIMI</a></li>
+                    <li><i class="i2"></i><a href="javascript:;">进店逛逛</a></li>
+                    <li><i class="i3"></i><a href="javascript:;">关注店铺</a></li>
+                </ul>
+                <dl>
+                    <dt>服务支持：</dt>
+                    <dd><b><img src="images/zhongbiao.png"/></b><a href="javascript:;">211限时达</a> </dd>
+                    <dd><b><img src="images/shoutixiang.png"/></b><a href="javascript:;">自提</a> </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+</div>
+<div class="sidebar">
+    <ul class="ul1">
+        <li><a href="#top" class="a3"><span>顶部</span></a> </li>
+        <li><a href="#" class="a2"><span>反馈</span></a> </li>
+    </ul>
+    <ul class="ul2">
+        <li><a href="#" class="a9"><span>咨询JIMI</span></a> </li>
+        <li><a href="#" class="a8"><span>我的消息</span></a> </li>
+        <li><a href="#" class="a7"><span>我的足迹</span></a> </li>
+        <li><a href="#" class="a6"><span>我的关注</span></a> </li>
+        <li><a href="#" class="a5"><span>购物车</span></a> </li>
+        <li><a href="#" class="a4"><span>京东会员</span></a> </li>
+    </ul>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
+</html>

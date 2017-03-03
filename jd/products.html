@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script>
+        $(function () {
+            $.getJSON("data/products.json", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var product = data[i];
+                    var $li = $("<li>");
+                    $li.append("<img src='images/" + product.imgsrc + "'/>");
+                    $li.append("<h2>"+product.title+"</h2>");
+                    $li.append("<em>¥"+product.price+"</em>");
+                    $("ul").append($li);
+                };
+            });
+        });
+    </script>
+    <style>
+        li{float:left;border:1px solid #ccc;padding:10px;margin:0 20px 20px;text-align:center;}
+        h2{font-size:16px;color:#666;}
+        em{font-style:normal;font-size:18px;color:#c81623;}
+        img{width:300px;height:300px;}
+    </style>
+</head>
+<body class="container">
+<div class="panel panel-primary">
+    <div class="panel-heading">商品详情</div>
+    <div class="panel-body">
+        <ul class="list-unstyled"></ul>
+    </div>
+</div>
+</body>
+</html>
